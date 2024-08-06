@@ -22,8 +22,44 @@ from scipy.cluster.hierarchy import dendrogram, linkage
 ```
 We had 14 characteristics and 4.000 observations. Churn is our target variable, and the other 13 are characteristics. It's important to add that we ddin't have missing values and all of them are numercial. 
 
-According to the heatmap, our target variable didn't have any correlation with gender and phone. But it had a high correlation with Lifetime (0.44), Average class frequency current month (0.41), Age (0.40), Contract Period (0.39) and Month to end contract (0.38):
+We analyzed the correlation between the target variable and the characteristics separately for people who had canceled and those who hadn't, as you can see in the heatmap:
 
 <p align="center">
-  <img src="https://github.com/Natcol05/Machine-Learning-Model/blob/bd2632edfb35f2499fcad857f56adafccc243b2e/Graphics/Heatmap.png" alt="Sample Image">
+  <img src="https://github.com/Natcol05/Machine-Learning-Model/blob/c7d3bdc37bff06ff0ecf992f7b1f7ed56d3fae9d/Graphics/Correlation_calceled_group.png" alt="Sample Image">
 </p>
+
+It is necessary to highlight that gender wasn't analyzed because we can't determine which numbers correspond to female and male, making it impossible to generate comments about it.
+
+Following that, we can make some observations based on the data distribution:
+
+* Clients who do not live near the gym have a higher chance of canceling their plan.
+* Clients who work for an associated company have lower cancellation rates. However, the proportion of clients with this characteristic is only slightly higher than those without it, meaning the size of both groups is not significantly different.
+* Clients who joined the gym through a promotional offer from a friend have lower cancellation chances, but this population isn't the largest.
+* Clients with contracts shorter than 3 months have a higher likelihood of canceling their plan.
+* There are more clients who do not participate in group classes, and this group has a higher cancellation rate.
+* The age distribution does not provide particularly useful information.
+* Cancellation rates increase for clients who are close to the end of their contract (within 2 months).
+* The higher the number of visits by a client, the lower the chance of cancellation.
+
+Regarding the correlation in the canceled group, 'month to end contract' and 'contract period' have a high correlation (0.98). Similarly, 'promo_friends' and 'partner' show a correlation of 0.38, while 'near_location' and 'promo_friends' have a correlation of 0.20.
+
+However, in the case of the non-canceled group, we observe that 'partner' and 'promo_friends' have a higher correlation (0.46). Additionally, new correlations are found between 'partner' and 'contract period' (0.29), 'contract period' and 'promo_friends' (0.22), 'month to end contract' and 'partner' (0.28), and 'month to end contract' and 'promo_friends' (0.21).
+
+Afther this we classified the clients in 5 clusters:
+
+<p align="center">
+  <img src="https://github.com/Natcol05/Machine-Learning-Model/blob/c7d3bdc37bff06ff0ecf992f7b1f7ed56d3fae9d/Graphics/Clusters.png" alt="Sample Image">
+</p>
+
+* **Remote Visitors:** clients who aren't near the location and have a moderate churn rate.
+* **Occasional Visitors:** Members who don't provide phone numbers and have a moderate churn rate.
+* **High Risk:** Members that have the highest churn rate, are near the location, have shorter contract periods, and lower class attendance.
+* **Frequent Spenders:** Members who have high additional charges, frequent class attendance, and a low churn rate.
+* **Loyal Long-Term:** Clients who are more committed (longer contract periods, higher lifetime, frequent class attendance) and have the lowest churn rate.
+
+It's important to highlight a few points: Being near the location doesn’t necessarily guarantee lower churn rates; however, it could be useful to design attractive strategies or promotions for people who live far away. On the other hand, longer contract periods and frequent class attendance are associated with lower churn rates. Based on this, we could say that focusing on increasing class attendance and extending contract periods can help to reduce churn rates.   
+
+
+
+
+

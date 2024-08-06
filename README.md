@@ -20,3 +20,10 @@ import scipy.cluster.hierarchy as sch
 from sklearn.cluster import KMeans
 from scipy.cluster.hierarchy import dendrogram, linkage
 ```
+We had 14 characteristics and 4.000 observations. Churn is our target variable, and the other 13 are characteristics. It's important to add that we ddin't have missing values and all of them are numercial. 
+
+According to the heatmap, our target variable didn't have any correlation with gender and phone. But it had a high correlation with Lifetime (0.44), Average class frequency current month (0.41), Age (0.40), Contract Period (0.39) and Month to end contract (0.38):
+
+<p align="center">
+  <img src="https://github.com/Natcol05/Machine-Learning-Model/blob/bd2632edfb35f2499fcad857f56adafccc243b2e/Graphics/Heatmap.png" alt="Sample Image">
+</p>

@@ -57,8 +57,14 @@ Afther this we classified the clients in 5 clusters:
 * **Frequent Spenders:** Members who have high additional charges, frequent class attendance, and a low churn rate.
 * **Loyal Long-Term:** Clients who are more committed (longer contract periods, higher lifetime, frequent class attendance) and have the lowest churn rate.
 
-It's important to highlight a few points: Being near the location doesn’t necessarily guarantee lower churn rates; however, it could be useful to design attractive strategies or promotions for people who live far away. On the other hand, longer contract periods and frequent class attendance are associated with lower churn rates. Based on this, we could say that focusing on increasing class attendance and extending contract periods can help to reduce churn rates.   
+**General Conclusions:**
 
+Regarding the exploratory data analysis, we did not encounter significant issues. In general, there were no missing data, and the dataset comprised numerical information. The categorical variables, such as phone, gender, and distance, were classified as 0 or 1, with 0 meaning "No" and 1 meaning "Yes."
+Gender was not considered in the analysis because we lacked sufficient information to determine which number corresponded to female and male.
+Now, regarding the conclusions, most clients are highly committed, meaning they have long contract periods, a high lifetime value, and frequent attendance, coupled with a low churn rate. This is a very positive indicator for the gym.
+However, we have a significant group of clients who live far away from the gym. Although being near the location doesn’t necessarily guarantee lower churn rates, motivating people who live far away can be useful in reducing cancellations. In this case, a good marketing strategy is essential for proper outreach. Perhaps creating a promotion scheme based on the distance from the gym could be attractive. This promotion could consider the cost of public transportation to determine the discount amount.
+Another strategy that could work is offering promotions and benefits for people who sign long-term contracts from the beginning. For instance, offering a lower fee for the first year or access to exclusive gym services for those with a year-long contract could be effective.
+Finally, there is a high correlation between attendance at group activities and low churn rates. Therefore, effective marketing strategies are also crucial here. Additionally, considering the schedules of people who visit the gym and the timings of the classes could be useful. It might be helpful to analyze the number of people who visit the gym during hours when no classes are offered and see if adjustments can be made.
 
 
 
